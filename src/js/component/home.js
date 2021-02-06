@@ -1,24 +1,49 @@
-import React from "react";
-
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+import React, { useState } from "react";
 
 //create your first component
 export function Home() {
+	// Using Hook, light=variable, setLight para cambiar el estado predeterminado de la variable.
+	const [light, setLight] = useState({
+		danger: "disable",
+		warning: "disable",
+		success: "disable" //no definida
+	});
+
 	return (
 		<div className="text-center mt-5">
-			<h1>Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+			<div id="TrafficLight" className="container">
+				<div
+					className={`btn btn-danger btn-circle ${light.danger}`}
+					onClick={() =>
+						setLight({
+							danger: "active",
+							warning: "disable",
+							success: "disable"
+						})
+					}
+				/>
+				<div
+					className={`btn btn-warning btn-circle ${light.warning}`}
+					onClick={() =>
+						setLight({
+							danger: "disable",
+							warning: "active",
+							success: "disable"
+						})
+					}
+				/>
+				<div
+					className={`btn btn-success btn-circle ${light.success}`}
+					onClick={() =>
+						setLight({
+							danger: "disable",
+							warning: "disable",
+							success: "active"
+						})
+					}
+				/>
+			</div>
+			<div id="TrafficBase" />
 		</div>
 	);
 }

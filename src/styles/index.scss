@@ -11,3 +11,25 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+#TrafficLight {
+    background-color: black;
+    width: 200px;
+    height: 500px;
+    border-radius: 20px;
+}
+.btn-circle {
+    margin: 10px auto;
+    width: 140px;
+    height: 140px;
+    border-radius: 100%;
+}
+
+#TrafficBase {
+    background-color: black;
+    width: 30px;
+    height: 200px;
+    margin: auto;
+}
+.active {
+    box-shadow: 0 0 40px #FFFFFF;
+}
